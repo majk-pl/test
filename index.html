@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+    <style>
+    .container{
+        display: flex;
+        justify-content: center;
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: aquamarine;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        background-color: blueviolet;
+    }
+    img{visibility: hidden; background-color: orange; width: 200px; height: 300px;}
+    </style>
+</head>
+<body>
+    <!-- .container>(.card>button#b${Menu$}+img#i$)*3 -->
+    <div class="container">
+        <div class="card"><button id="b1" onmouseover="inn(this)">Menu1</button>
+            <img src="" alt="" id="i1" onmouseout="out(this)">
+        </div>
+        <div class="card"><button id="b2" onmouseover="inn(this)">Menu2</button>
+            <img src="" alt="" id="i2" onmouseout="out(this)">
+        </div>
+        <div class="card"><button id="b3" onmouseover="inn(this)">Menu3</button>
+            <img src="" alt="" id="i3" onmouseout="out(this)">
+        </div>
+        <!-- <div class="card"><button id="b3">Menu3</button><img src="https://via.placeholder.com/200x300" alt="" id="i3"></div> -->
+    </div>
+
+<script>
+    function inn(a) {
+        // c = a.parentNode.getAttribute('class')
+        // ii = [document.getElementsByClassName(c)]
+        var ii = document.getElementsByTagName('img')
+        for (var x = 0; x < ii.length; x++) {
+            ii[x].style.visibility = 'hidden'
+        }
+        // console.log(ii)
+        i = a.nextElementSibling.getAttribute('id')
+        document.getElementById(i).style.visibility = 'visible'
+        // document.getElementById('i1').style.display = 'block'
+    }
+    function out(b) {
+        // document.getElementById('i1').style.display = 'none'
+        b.style.visibility = 'hidden'
+    }
+
+</script>
+
+    <!-- <input type="text" id="txt1" onfocus="inn(this)" onblur="out(this)" autofocus placeholder="length">
+    <input type="text" id="txt2" onfocus="inn(this)" onblur="out(this)" placeholder="age">
+    <input type="text" id="txt3" onfocus="inn(this)" onblur="out(this)" autocomplete="on" placeholder="email">
+    
+    <script>
+        function inn(f) {
+            f.style.background="#afa"
+            console.log(f);
+            var x=10;
+            var y=x+"10";
+            var z=typeof(32);
+            var zz;
+            console.log("x=10 ","y=x+'10' ","z=typeof(32) ","zz; ");
+            console.log(x,y,z,zz);
+        }
+        function out(b) {
+            b.style.background="#fff"
+            console.log(b)
+
+            var f3 = document.getElementById("txt3").value.indexOf("@");
+            var f2 = document.getElementById("txt2").value;
+            var f1 = document.getElementById("txt1");
+            submitOK = "true";
+
+            if (f3 == -1) {
+            alert("Not a valid e-mail!");
+            submitOK = "false";
+            }
+
+            if (isNaN(f2) || f2<1 || f2>100) {
+            alert("The age must be a number between 1 and 100");
+            submitOK = "false";
+            }
+
+            if (f1.value.length > 10) {
+            alert("The name may have no more than 10 characters");
+            submitOK = "false";
+            }
+
+            if (submitOK == "false") {
+            return false;
+            }
+        }
+    </script> -->
+
+</body>
+</html>
