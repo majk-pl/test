@@ -20,6 +20,7 @@
     }
     img{visibility: hidden; background-color: orange; width: 200px; height: 300px;}
     form{
+        max-width: 500px;
         margin: 50px auto;
     }
     </style>
@@ -27,20 +28,20 @@
 <body>
     <!-- .container>(.card>button#b${Menu$}+img#i$)*3 -->
     <div class="container">
-        <div class="card"><button id="b1" onmouseover="inn(this)">Menu1</button>
-            <img src="" alt="" id="i1" onmouseout="out(this)">
+        <div class="card"><button id="b1" onmouseover="minn(this)">Menu1</button>
+            <img src="" alt="" id="i1" onmouseout="mout(this)">
         </div>
-        <div class="card"><button id="b2" onmouseover="inn(this)">Menu2</button>
-            <img src="" alt="" id="i2" onmouseout="out(this)">
+        <div class="card"><button id="b2" onmouseover="minn(this)">Menu2</button>
+            <img src="" alt="" id="i2" onmouseout="mout(this)">
         </div>
-        <div class="card"><button id="b3" onmouseover="inn(this)">Menu3</button>
-            <img src="" alt="" id="i3" onmouseout="out(this)">
+        <div class="card"><button id="b3" onmouseover="minn(this)">Menu3</button>
+            <img src="" alt="" id="i3" onmouseout="mout(this)">
         </div>
         <!-- <div class="card"><button id="b3">Menu3</button><img src="https://via.placeholder.com/200x300" alt="" id="i3"></div> -->
     </div>
 
 <script>
-    function inn(a) {
+    function minn(a) {
         // c = a.parentNode.getAttribute('class')
         // ii = [document.getElementsByClassName(c)]
         var ii = document.getElementsByTagName('img')
@@ -52,7 +53,7 @@
         document.getElementById(i).style.visibility = 'visible'
         // document.getElementById('i1').style.display = 'block'
     }
-    function out(b) {
+    function mout(b) {
         // document.getElementById('i1').style.display = 'none'
         b.style.visibility = 'hidden'
     }
